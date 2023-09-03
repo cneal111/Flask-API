@@ -56,13 +56,13 @@ def getSEOScreenshots():
                     metaDesc = "Not Found"
 
 
-            driver.save_screenshot("/home/ubuntu/python-web-screenshots/screenshots/"+ str(fileName) + ".png")
-            file = open("/home/ubuntu/python-web-screenshots/screenshots/" + str(fileName) + ".png","rb")
+            driver.save_screenshot("FILEPATH"+ str(fileName) + ".png")
+            file = open("FILEPATH" + str(fileName) + ".png","rb")
             driver.quit()
             client.upload_fileobj(file,'seo-screenshots',fileName,{'ACL':'public-read'})
 
 
-            url = "https://seo-screenshots.s3.amazonaws.com/" + str(fileName)
+            url = "S3 BUCKET URL" + str(fileName)
             seoData = {
                 'title': title,
                 'description': metaDesc,
